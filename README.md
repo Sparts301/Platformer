@@ -1,7 +1,6 @@
 # On va travailler sur un Platformer
 
-http://SPARTS301/githhub.io/Platformer
-
+https://sparts301.github.io/Platformer/
 
 
 

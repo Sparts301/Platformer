@@ -17,8 +17,6 @@ class Tableau01 extends Tableau{
         rouge.setImmovable(true); //ne bouge pas quand on rentre dedans
         this.physics.add.collider(this.player, rouge);//le joueur rebondit dessus
         this.physics.add.collider(this.star1, rouge);//l'étoile1 rebondit dessus
-        this.physics.add.collider(this.star2, rouge);//l'étoile2 rebondit dessus
-        this.physics.add.collider(this.star3, rouge);//l'étoile3 rebondit dessus
         
         this.star1=this.physics.add.sprite(200,100,"star");
         this.star1.setCollideWorldBounds(true);

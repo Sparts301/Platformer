@@ -44,8 +44,7 @@ class Tableau01 extends Tableau{
 
         this.physics.add.collider(this.player, groupeVert);//le joueur rebondit sur les plateformes du goupe vert
         this.physics.add.collider(this.star1, groupeVert);//l'étoile1 rebondit sur les plateformes du goupe vert
-        this.physics.add.collider(this.star2, groupeVert);//l'étoile1 rebondit sur les plateformes du goupe vert
-        this.physics.add.collider(this.star3, groupeVert);//l'étoile1 rebondit sur les plateformes du goupe vert
+
 
     }
 

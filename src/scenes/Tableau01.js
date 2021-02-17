@@ -18,7 +18,7 @@ class Tableau01 extends Tableau{
         this.physics.add.collider(this.player, rouge);//le joueur rebondit dessus
         this.physics.add.collider(this.star1, rouge);//l'étoile1 rebondit dessus
         
-        this.star1=this.physics.add.sprite(500,300,"star");
+        this.star1=this.physics.add.sprite(800,400,"star");
         this.star1.setCollideWorldBounds(true);
         this.star1.setBounce(0);
         this.physics.add.overlap(this.player, this.star1, this.ramasserEtoile, null, this);

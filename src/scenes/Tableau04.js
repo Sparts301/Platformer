@@ -4,6 +4,7 @@ class Tableau04 extends Tableau{
         super.preload();
         this.load.image('star', 'assets/star.png');
         this.load.image('ground', 'assets/platform.png');
+        this.load.image('monstre','assets/Snake.png')
     }
     create() {
         super.create();

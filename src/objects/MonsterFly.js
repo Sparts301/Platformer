@@ -14,15 +14,15 @@ class MonsterFly extends ObjetEnnemi{
         this.setDisplaySize(64,64);
 
         //on réduit un peu la zone de hit
-        this.setBodySize(this.body.width-400,this.body.height-400);
-        this.setOffset(150, 250);
+        this.setBodySize(this.body.width-520,this.body.height-450);
+        this.setOffset(250, 250);
 
         //définir les propriété que l'on va utiliser dans notre animation
 
         // X
         this.originalX=x;
-        this.minX=x-200;
-        this.maxX=x+200;
+        this.minX=x+200;
+        this.maxX=x-200;
 
         // Y
         this.originalY=y;
@@ -40,7 +40,7 @@ class MonsterFly extends ObjetEnnemi{
         scene.tweens.add({
                 targets:this,
                 duration:200,
-                delay:Math.random()*1000,
+                delay:Math.random()*-1000,
                 alpha:{
                     startDelay:Math.random()*5000,
                     from:0,
@@ -59,7 +59,7 @@ class MonsterFly extends ObjetEnnemi{
             x: {
                 from: this.minX,
                 to:this.maxX,
-                duration: 10*1000,
+                duration: 10*310,
                 ease: 'Sine.easeInOut',
                 yoyo: -1,
                 repeat:-1,

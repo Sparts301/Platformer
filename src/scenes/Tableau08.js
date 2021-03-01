@@ -4,7 +4,7 @@ class Tableau08 extends Tableau{
         super.preload();
         this.load.image('star', 'assets/star.png');
         this.load.image('ground', 'assets/platform.png');
-        this.load.image('sky-2', 'assets/sky-2.jpg');
+        this.load.image('foret', 'assets/foret.png');
     }
     create() {
         super.create();
@@ -15,7 +15,7 @@ class Tableau08 extends Tableau{
         this.cameras.main.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
         this.physics.world.setBounds(0, 0, largeurDuTableau,  hauteurDuTableau);
 
-        this.cameras.main.startFollow(this.player, false, 0.05, 0.05);
+        this.cameras.main.startFollow(this.player, false, 1.05, 1.05);
 
         //quelques étoiles et plateformes qui vont avec
         this.stars=this.physics.add.group();
@@ -38,7 +38,7 @@ class Tableau08 extends Tableau{
             0,
             this.sys.canvas.width,
             this.sys.canvas.height,
-            'sky-2'
+            'foret'
         );
         this.sky.setOrigin(0,0);
         this.sky.setScrollFactor(0);//fait en sorte que le ciel ne suive pas la caméra
@@ -48,7 +48,7 @@ class Tableau08 extends Tableau{
             0,
             this.sys.canvas.width,
             this.sys.canvas.height,
-            'sky-2'
+            'foret'
         );
         this.sky2.setScrollFactor(0);
         this.sky2.setOrigin(0,0);

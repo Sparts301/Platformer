@@ -16,7 +16,7 @@ let config = {
     scene: [
         new Ui(),
 
-       
+        
         new Tableau00A("toto"),
         new Tableau00("Des étoiles"),
         new Tableau01("Des plateformes"),

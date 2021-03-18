@@ -8,6 +8,10 @@ class Tableau00A extends Tableau{
         this.load.image('Snake', 'assets/Snake.png');
         this.load.image('monster-fly','assets/Snakewing.png');
         this.load.image('platform','assets/arbre01.png')
+        this.load.image('1ereCouche','assets/soletavant.png')
+        this.load.image('2eCouche','assets/fond.png')
+        this.load.image('3eCouche','assets/nuage.png')
+
     }
     create() {
         console.log("a")
@@ -20,7 +24,39 @@ class Tableau00A extends Tableau{
 
         this.cameras.main.startFollow(this.player, false, 1.05, 1.05);
 
+        this.sky3=this.add.tileSprite(
+            0,
+            0,
+            this.sys.canvas.width,
+            this.sys.canvas.height,
+            '3eCouche'
+        );
+        this.sky3.setScrollFactor(0);
+        this.sky3.setOrigin(0,0);
 
+
+
+                //on ajoute une deuxième couche de ciel
+        this.sky2=this.add.tileSprite(
+            0,
+            0,
+            this.sys.canvas.width,
+            this.sys.canvas.height,
+            '2eCouche'
+        );
+        this.sky2.setScrollFactor(0);
+        this.sky2.setOrigin(0,0);
+        //this.sky2.alpha=0.2;
+        //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répète
+        this.sky=this.add.tileSprite(
+            0,
+            0,
+            this.sys.canvas.width,
+            this.sys.canvas.height,
+            '1ereCouche'
+        );
+        this.sky.setOrigin(0,0);
+        this.sky.setScrollFactor(0);
 
         this.star1=this.physics.add.sprite(570,600,"star");
         this.star1.setCollideWorldBounds(true);
@@ -195,12 +231,21 @@ class Tableau00A extends Tableau{
 
         
         
+        this.player.setDepth(100);
+
         
-        
-
-
-
-
+    }
+    update(){
+        super.update();
+        //le ciel se déplace moins vite que la caméra pour donner un effet paralax
+        this.sky.tilePositionX=this.cameras.main.scrollX*0.6;
+        //this.sky.tilePositionY=this.cameras.main.scrollY*0.2;
+        //le deuxième ciel se déplace moins vite pour accentuer l'effet
+        this.sky2.tilePositionX=this.cameras.main.scrollX*0.3+500;
+        //this.sky2.tilePositionY=this.cameras.main.scrollY*0.1+30;
+        //this.sky10.tilePositionX=this.cameras.main.scrollX*0;
+        this.sky3.tilePositionX=this.cameras.main.scrollX*0.2;
+        //this.sky3.tilePositionY=this.cameras.main.scrollY*0.05;
     }
 
 }
